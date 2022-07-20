@@ -6,6 +6,7 @@ export type Path =
   | 'organizations.list'
   | 'organizations.create'
   | 'organizations.projects.create'
+  | 'organizations.details'
   | 'organizations.member.invite'
   | 'organizations.member.accept';
 export const paths: Record<Path, string> = {
@@ -16,6 +17,7 @@ export const paths: Record<Path, string> = {
   'organizations.list': '/organizations',
   'organizations.create': '/organizations/create',
   'organizations.projects.create': '/organizations/:organizationId/projects/create',
+  'organizations.details': '/organizations/:organizationId',
   'organizations.member.invite': '/organizations/:organizationId/invitations',
   'organizations.member.accept': '/organizations/:organizationId/members',
 };

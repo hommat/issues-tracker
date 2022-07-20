@@ -16,9 +16,9 @@ export const UserOrganizationsListElement: React.FC<UserOrganizationsListElement
   };
   return (
     <Box>
-      <Heading size="lg">
-        {name} : {id}
-      </Heading>
+      <Link to={reverse({ path: 'organizations.details', params: organizationParams })}>
+        <Heading size="lg">{name}</Heading>
+      </Link>
       <List>
         {projects.map(({ id, name }) => (
           <ListItem key={id}>{name}</ListItem>

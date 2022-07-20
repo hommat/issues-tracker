@@ -9,6 +9,7 @@ import { LoginPage, RegisterPage, UserActivationPage } from '@users/pages';
 import {
   CreateOrganizationPage,
   CreateProjectPage,
+  OrganizationDetailsPage,
   OrganizationsPage,
   MemberInvitationPage,
   MemberAcceptancePage,
@@ -34,6 +35,10 @@ export const App: React.FC = () => {
                 <Route
                   path={paths['organizations.projects.create']}
                   element={<CreateProjectPage />}
+                />
+                <Route
+                  path={paths['organizations.details']}
+                  element={<OrganizationDetailsPage />}
                 />
                 <Route
                   path={paths['organizations.member.invite']}

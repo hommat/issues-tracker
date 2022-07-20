@@ -1,6 +1,6 @@
 import { AxiosError, AxiosResponse } from 'axios';
 import { useQuery, UseQueryResult } from 'react-query';
-import { getUserOrganizations } from '@organizations/api';
+import { getOrganizations } from '@organizations/api';
 import { UserOrganizationDto } from '@organizations/dtos';
 import { GET_ORGANIZATIONS_QUERY } from '@organizations/consts/react-query-keys';
 import { ApplicationErrorDto } from '@shared/dtos/application-error';
@@ -15,7 +15,7 @@ export const useOrganizations = (
   AxiosError<ApplicationErrorDto<ApplicationErrorCode, HttpStatus>, unknown>
 > => {
   const authorizationHeaders = useAuthorizationHeaders();
-  return useQuery(GET_ORGANIZATIONS_QUERY, () => getUserOrganizations(authorizationHeaders), {
+  return useQuery(GET_ORGANIZATIONS_QUERY, () => getOrganizations(authorizationHeaders), {
     onError,
   });
 };
